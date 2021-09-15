@@ -41,6 +41,9 @@
 
 -- Enjoy!
 
+CREATE DATABASE AdventureWorks OWNER hutson;
+
+DROP DATABASE ADventureWorks;
 
 -- -- Disconnect all other existing connections
 -- SELECT pg_terminate_backend(pid)
@@ -175,31 +178,31 @@ CREATE SCHEMA Person
 COMMENT ON SCHEMA Person IS 'Contains objects related to names and addresses of customers, vendors, and employees';
 
 SELECT 'Copying data into Person.BusinessEntity';
-\copy Person.BusinessEntity FROM './data/BusinessEntity.csv' DELIMITER E'\t' CSV;
+COPY Person.BusinessEntity FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/BusinessEntity.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Person.Person';
-\copy Person.Person FROM './data/Person.csv' DELIMITER E'\t' CSV;
+COPY Person.Person FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/Person.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Person.StateProvince';
-\copy Person.StateProvince FROM './data/StateProvince.csv' DELIMITER E'\t' CSV;
+COPY Person.StateProvince FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/StateProvince.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Person.Address';
-\copy Person.Address FROM './data/Address.csv' DELIMITER E'\t' CSV ENCODING 'latin1';
+COPY Person.Address FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/Address.csv' DELIMITER E'\t' CSV ENCODING 'latin1';
 SELECT 'Copying data into Person.AddressType';
-\copy Person.AddressType FROM './data/AddressType.csv' DELIMITER E'\t' CSV;
+COPY Person.AddressType FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/AddressType.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Person.BusinessEntityAddress';
-\copy Person.BusinessEntityAddress FROM './data/BusinessEntityAddress.csv' DELIMITER E'\t' CSV;
+COPY Person.BusinessEntityAddress FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/BusinessEntityAddress.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Person.ContactType';
-\copy Person.ContactType FROM './data/ContactType.csv' DELIMITER E'\t' CSV;
+COPY Person.ContactType FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/ContactType.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Person.BusinessEntityContact';
-\copy Person.BusinessEntityContact FROM './data/BusinessEntityContact.csv' DELIMITER E'\t' CSV;
+COPY Person.BusinessEntityContact FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/BusinessEntityContact.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Person.EmailAddress';
-\copy Person.EmailAddress FROM './data/EmailAddress.csv' DELIMITER E'\t' CSV;
+COPY Person.EmailAddress FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/EmailAddress.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Person.Password';
-\copy Person.Password FROM './data/Password.csv' DELIMITER E'\t' CSV;
+COPY Person.Password FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/Password.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Person.PhoneNumberType';
-\copy Person.PhoneNumberType FROM './data/PhoneNumberType.csv' DELIMITER E'\t' CSV;
+COPY Person.PhoneNumberType FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/PhoneNumberType.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Person.PersonPhone';
-\copy Person.PersonPhone FROM './data/PersonPhone.csv' DELIMITER E'\t' CSV;
+COPY Person.PersonPhone FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/PersonPhone.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Person.CountryRegion';
-\copy Person.CountryRegion FROM './data/CountryRegion.csv' DELIMITER E'\t' CSV;
+COPY Person.CountryRegion FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/CountryRegion.csv' DELIMITER E'\t' CSV;
 
 
 CREATE SCHEMA HumanResources
@@ -268,17 +271,17 @@ CREATE SCHEMA HumanResources
 COMMENT ON SCHEMA HumanResources IS 'Contains objects related to employees and departments.';
 
 SELECT 'Copying data into HumanResources.Department';
-\copy HumanResources.Department FROM './data/Department.csv' DELIMITER E'\t' CSV;
+COPY HumanResources.Department FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/Department.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into HumanResources.Employee';
-\copy HumanResources.Employee FROM './data/Employee.csv' DELIMITER E'\t' CSV;
+COPY HumanResources.Employee FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/Employee.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into HumanResources.EmployeeDepartmentHistory';
-\copy HumanResources.EmployeeDepartmentHistory FROM './data/EmployeeDepartmentHistory.csv' DELIMITER E'\t' CSV;
+COPY HumanResources.EmployeeDepartmentHistory FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/EmployeeDepartmentHistory.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into HumanResources.EmployeePayHistory';
-\copy HumanResources.EmployeePayHistory FROM './data/EmployeePayHistory.csv' DELIMITER E'\t' CSV;
+COPY HumanResources.EmployeePayHistory FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/EmployeePayHistory.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into HumanResources.JobCandidate';
-\copy HumanResources.JobCandidate FROM './data/JobCandidate.csv' DELIMITER E'\t' CSV ENCODING 'latin1';
+COPY HumanResources.JobCandidate FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/JobCandidate.csv' DELIMITER E'\t' CSV ENCODING 'latin1';
 SELECT 'Copying data into HumanResources.Shift';
-\copy HumanResources.Shift FROM './data/Shift.csv' DELIMITER E'\t' CSV;
+COPY HumanResources.Shift FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/Shift.csv' DELIMITER E'\t' CSV;
 
 -- Calculated column that needed to be there just for the CSV import
 ALTER TABLE HumanResources.Employee DROP COLUMN OrganizationLevel;
@@ -627,45 +630,45 @@ CREATE SCHEMA Production
 COMMENT ON SCHEMA Production IS 'Contains objects related to products, inventory, and manufacturing.';
 
 SELECT 'Copying data into Production.BillOfMaterials';
-\copy Production.BillOfMaterials FROM './data/BillOfMaterials.csv' DELIMITER E'\t' CSV;
+COPY Production.BillOfMaterials FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/BillOfMaterials.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Production.Culture';
-\copy Production.Culture FROM './data/Culture.csv' DELIMITER E'\t' CSV;
+COPY Production.Culture FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/Culture.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Production.Document';
-\copy Production.Document FROM './data/Document.csv' DELIMITER E'\t' CSV;
+COPY Production.Document FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/Document.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Production.ProductCategory';
-\copy Production.ProductCategory FROM './data/ProductCategory.csv' DELIMITER E'\t' CSV;
+COPY Production.ProductCategory FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/ProductCategory.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Production.ProductSubcategory';
-\copy Production.ProductSubcategory FROM './data/ProductSubcategory.csv' DELIMITER E'\t' CSV;
+COPY Production.ProductSubcategory FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/ProductSubcategory.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Production.ProductModel';
-\copy Production.ProductModel FROM './data/ProductModel.csv' DELIMITER E'\t' CSV;
+COPY Production.ProductModel FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/ProductModel.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Production.Product';
-\copy Production.Product FROM './data/Product.csv' DELIMITER E'\t' CSV;
+COPY Production.Product FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/Product.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Production.ProductCostHistory';
-\copy Production.ProductCostHistory FROM './data/ProductCostHistory.csv' DELIMITER E'\t' CSV;
+COPY Production.ProductCostHistory FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/ProductCostHistory.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Production.ProductDescription';
-\copy Production.ProductDescription FROM './data/ProductDescription.csv' DELIMITER E'\t' CSV;
+COPY Production.ProductDescription FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/ProductDescription.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Production.ProductDocument';
-\copy Production.ProductDocument FROM './data/ProductDocument.csv' DELIMITER E'\t' CSV;
+COPY Production.ProductDocument FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/ProductDocument.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Production.Location';
-\copy Production.Location FROM './data/Location.csv' DELIMITER E'\t' CSV;
+COPY Production.Location FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/Location.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Production.ProductInventory';
-\copy Production.ProductInventory FROM './data/ProductInventory.csv' DELIMITER E'\t' CSV;
+COPY Production.ProductInventory FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/ProductInventory.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Production.ProductListPriceHistory';
-\copy Production.ProductListPriceHistory FROM './data/ProductListPriceHistory.csv' DELIMITER E'\t' CSV;
+COPY Production.ProductListPriceHistory FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/ProductListPriceHistory.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Production.Illustration';
-\copy Production.Illustration FROM './data/Illustration.csv' DELIMITER E'\t' CSV;
+COPY Production.Illustration FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/Illustration.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Production.ProductModelIllustration';
-\copy Production.ProductModelIllustration FROM './data/ProductModelIllustration.csv' DELIMITER E'\t' CSV;
+COPY Production.ProductModelIllustration FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/ProductModelIllustration.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Production.ProductModelProductDescriptionCulture';
-\copy Production.ProductModelProductDescriptionCulture FROM './data/ProductModelProductDescriptionCulture.csv' DELIMITER E'\t' CSV;
+COPY Production.ProductModelProductDescriptionCulture FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/ProductModelProductDescriptionCulture.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Production.ProductPhoto';
-\copy Production.ProductPhoto FROM './data/ProductPhoto.csv' DELIMITER E'\t' CSV;
+COPY Production.ProductPhoto FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/ProductPhoto.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Production.ProductProductPhoto';
-\copy Production.ProductProductPhoto FROM './data/ProductProductPhoto.csv' DELIMITER E'\t' CSV;
+COPY Production.ProductProductPhoto FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/ProductProductPhoto.csv' DELIMITER E'\t' CSV;
 
 -- This doesn't work:
 -- SELECT 'Copying data into Production.ProductReview';
--- \copy Production.ProductReview FROM 'ProductReview.csv' DELIMITER '  ' CSV;
+-- COPY Production.ProductReview FROM 'ProductReview.csv' DELIMITER '  ' CSV;
 
 -- so instead ...
 INSERT INTO Production.ProductReview (ProductReviewID, ProductID, ReviewerName, ReviewDate, EmailAddress, Rating, Comments, ModifiedDate) VALUES
@@ -708,17 +711,17 @@ we think that after a test drive you''l find the quality and performance above a
 any level of experience. It''s a huge step in the right direction for female cyclists and well worth your consideration and hard-earned money.', '2013-11-15 00:00:00');
 
 SELECT 'Copying data into Production.ScrapReason';
-\copy Production.ScrapReason FROM './data/ScrapReason.csv' DELIMITER E'\t' CSV;
+COPY Production.ScrapReason FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/ScrapReason.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Production.TransactionHistory';
-\copy Production.TransactionHistory FROM './data/TransactionHistory.csv' DELIMITER E'\t' CSV;
+COPY Production.TransactionHistory FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/TransactionHistory.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Production.TransactionHistoryArchive';
-\copy Production.TransactionHistoryArchive FROM './data/TransactionHistoryArchive.csv' DELIMITER E'\t' CSV;
+COPY Production.TransactionHistoryArchive FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/TransactionHistoryArchive.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Production.UnitMeasure';
-\copy Production.UnitMeasure FROM './data/UnitMeasure.csv' DELIMITER E'\t' CSV;
+COPY Production.UnitMeasure FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/UnitMeasure.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Production.WorkOrder';
-\copy Production.WorkOrder FROM './data/WorkOrder.csv' DELIMITER E'\t' CSV;
+COPY Production.WorkOrder FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/WorkOrder.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Production.WorkOrderRouting';
-\copy Production.WorkOrderRouting FROM './data/WorkOrderRouting.csv' DELIMITER E'\t' CSV;
+COPY Production.WorkOrderRouting FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/WorkOrderRouting.csv' DELIMITER E'\t' CSV;
 
 -- Calculated columns that needed to be there just for the CSV import
 ALTER TABLE Production.WorkOrder DROP COLUMN StockedQty;
@@ -972,15 +975,15 @@ CREATE SCHEMA Purchasing
 COMMENT ON SCHEMA Purchasing IS 'Contains objects related to vendors and purchase orders.';
 
 SELECT 'Copying data into Purchasing.ProductVendor';
-\copy Purchasing.ProductVendor FROM 'ProductVendor.csv' DELIMITER E'\t' CSV;
+COPY Purchasing.ProductVendor FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/ProductVendor.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Purchasing.PurchaseOrderDetail';
-\copy Purchasing.PurchaseOrderDetail FROM 'PurchaseOrderDetail.csv' DELIMITER E'\t' CSV;
+COPY Purchasing.PurchaseOrderDetail FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/PurchaseOrderDetail.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Purchasing.PurchaseOrderHeader';
-\copy Purchasing.PurchaseOrderHeader FROM 'PurchaseOrderHeader.csv' DELIMITER E'\t' CSV;
+COPY Purchasing.PurchaseOrderHeader FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/PurchaseOrderHeader.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Purchasing.ShipMethod';
-\copy Purchasing.ShipMethod FROM 'ShipMethod.csv' DELIMITER E'\t' CSV;
+COPY Purchasing.ShipMethod FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/ShipMethod.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Purchasing.Vendor';
-\copy Purchasing.Vendor FROM 'Vendor.csv' DELIMITER E'\t' CSV;
+COPY Purchasing.Vendor FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/Vendor.csv' DELIMITER E'\t' CSV;
 
 -- Calculated columns that needed to be there just for the CSV import
 ALTER TABLE Purchasing.PurchaseOrderDetail DROP COLUMN LineTotal;
@@ -1196,43 +1199,43 @@ CREATE SCHEMA Sales
 COMMENT ON SCHEMA Sales IS 'Contains objects related to customers, sales orders, and sales territories.';
 
 SELECT 'Copying data into Sales.CountryRegionCurrency';
-\copy Sales.CountryRegionCurrency FROM 'CountryRegionCurrency.csv' DELIMITER E'\t' CSV;
+COPY Sales.CountryRegionCurrency FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/CountryRegionCurrency.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Sales.CreditCard';
-\copy Sales.CreditCard FROM 'CreditCard.csv' DELIMITER E'\t' CSV;
+COPY Sales.CreditCard FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/CreditCard.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Sales.Currency';
-\copy Sales.Currency FROM 'Currency.csv' DELIMITER E'\t' CSV;
+COPY Sales.Currency FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/Currency.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Sales.CurrencyRate';
-\copy Sales.CurrencyRate FROM 'CurrencyRate.csv' DELIMITER E'\t' CSV;
+COPY Sales.CurrencyRate FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/CurrencyRate.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Sales.Customer';
-\copy Sales.Customer FROM 'Customer.csv' DELIMITER E'\t' CSV;
+COPY Sales.Customer FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/Customer.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Sales.PersonCreditCard';
-\copy Sales.PersonCreditCard FROM 'PersonCreditCard.csv' DELIMITER E'\t' CSV;
+COPY Sales.PersonCreditCard FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/PersonCreditCard.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Sales.SalesOrderDetail';
-\copy Sales.SalesOrderDetail FROM 'SalesOrderDetail.csv' DELIMITER E'\t' CSV;
+COPY Sales.SalesOrderDetail FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/SalesOrderDetail.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Sales.SalesOrderHeader';
-\copy Sales.SalesOrderHeader FROM 'SalesOrderHeader.csv' DELIMITER E'\t' CSV;
+COPY Sales.SalesOrderHeader FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/SalesOrderHeader.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Sales.SalesOrderHeaderSalesReason';
-\copy Sales.SalesOrderHeaderSalesReason FROM 'SalesOrderHeaderSalesReason.csv' DELIMITER E'\t' CSV;
+COPY Sales.SalesOrderHeaderSalesReason FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/SalesOrderHeaderSalesReason.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Sales.SalesPerson';
-\copy Sales.SalesPerson FROM 'SalesPerson.csv' DELIMITER E'\t' CSV;
+COPY Sales.SalesPerson FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/SalesPerson.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Sales.SalesPersonQuotaHistory';
-\copy Sales.SalesPersonQuotaHistory FROM 'SalesPersonQuotaHistory.csv' DELIMITER E'\t' CSV;
+COPY Sales.SalesPersonQuotaHistory FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/SalesPersonQuotaHistory.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Sales.SalesReason';
-\copy Sales.SalesReason FROM 'SalesReason.csv' DELIMITER E'\t' CSV;
+COPY Sales.SalesReason FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/SalesReason.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Sales.SalesTaxRate';
-\copy Sales.SalesTaxRate FROM 'SalesTaxRate.csv' DELIMITER E'\t' CSV;
+COPY Sales.SalesTaxRate FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/SalesTaxRate.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Sales.SalesTerritory';
-\copy Sales.SalesTerritory FROM 'SalesTerritory.csv' DELIMITER E'\t' CSV;
+COPY Sales.SalesTerritory FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/SalesTerritory.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Sales.SalesTerritoryHistory';
-\copy Sales.SalesTerritoryHistory FROM 'SalesTerritoryHistory.csv' DELIMITER E'\t' CSV;
+COPY Sales.SalesTerritoryHistory FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/SalesTerritoryHistory.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Sales.ShoppingCartItem';
-\copy Sales.ShoppingCartItem FROM 'ShoppingCartItem.csv' DELIMITER E'\t' CSV;
+COPY Sales.ShoppingCartItem FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/ShoppingCartItem.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Sales.SpecialOffer';
-\copy Sales.SpecialOffer FROM 'SpecialOffer.csv' DELIMITER E'\t' CSV;
+COPY Sales.SpecialOffer FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/SpecialOffer.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Sales.SpecialOfferProduct';
-\copy Sales.SpecialOfferProduct FROM 'SpecialOfferProduct.csv' DELIMITER E'\t' CSV;
+COPY Sales.SpecialOfferProduct FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/SpecialOfferProduct.csv' DELIMITER E'\t' CSV;
 SELECT 'Copying data into Sales.Store';
-\copy Sales.Store FROM 'Store.csv' DELIMITER E'\t' CSV;
+COPY Sales.Store FROM '/Users/hutson/Desktop/Projects/adventure-works-postgres/data/Store.csv' DELIMITER E'\t' CSV;
 
 -- Calculated columns that needed to be there just for the CSV import
 ALTER TABLE Sales.Customer DROP COLUMN AccountNumber;
